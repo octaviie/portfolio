@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio | Putri Octavianty</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f4f8fb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1769aa;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #1769aa;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 140px 20px 80px;
+      text-align: center;
+      background: linear-gradient(135deg, #eaf2f8 0%, #ffffff 100%);
+    }
+
+    .avatar-placeholder {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #1769aa;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin: 0 auto 20px;
+      box-shadow: 0 8px 20px rgba(23, 105, 170, 0.2);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #1769aa;
+      margin-bottom: 10px;
+    }
+
+    .hero h3 {
+      color: #4a90e2;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: #666;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #1769aa;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(23, 105, 170, 0.3);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #115287;
+      transform: translateY(-2px);
+    }
+
+    /* Container Section */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #1769aa;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 50px;
+      height: 3px;
+      background: #1769aa;
+      display: block;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+
+    /* Skill Badges */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-card i {
+      font-size: 2.5rem;
+      color: #1769aa;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .project-info {
+      padding: 20px;
+    }
+
+    .project-info h3 {
+      color: #1769aa;
+      margin-bottom: 8px;
+    }
+
+    .project-tag {
+      display: inline-block;
+      background: #eaf2f8;
+      color: #1769aa;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 15px;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* Contact Card */
+    .contact-card {
+      background: white;
+      max-width: 600px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .contact-info a {
+      color: #1769aa;
+      font-size: 1.5rem;
+      transition: 0.3s;
+    }
+
+    .contact-info a:hover {
+      color: #115287;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ffffff;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="logo">PO.</div>
+      <ul class="nav-links">
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#skills">Keahlian</a></li>
+        <li><a href="#projects">Proyek</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <div class="avatar-placeholder">
+      <i class="fa-solid fa-user-astronaut"></i>
+    </div>
+    <h1>Putri Octavianty</h1>
+    <h3>Mahasiswa Manajemen Informasi Komunikasi</h3>
+    <p>Tertarik pada pengelolaan informasi digital dan pengembangan infrastruktur <strong>Cloud Computing</strong> untuk solusi teknologi yang efisien dan terstruktur.</p>
+    <a href="#contact" class="btn">Hubungi Saya</a>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="container" id="skills">
+    <h2 class="section-title">Keahlian & Minat</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="fa-solid fa-cloud"></i>
+        <h3>Cloud Computing</h3>
+        <p>Mempelajari arsitektur awan, penyebaran aplikasi, dan pengelolaan infrastruktur digital berbasis cloud.</p>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-database"></i>
+        <h3>Manajemen Informasi</h3>
+        <p>Pengelolaan alur data, sistem informasi terintegrasi, dan komunikasi teknologi modern.</p>
+      </div>
+      <div class="skill-card">
+        <i class="fa-solid fa-code"></i>
+        <h3>Web Basics</h3>
+        <p>Memahami struktur dasar pemograman web (HTML, CSS) untuk visualisasi antarmuka pengguna.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="container" id="projects">
+    <h2 class="section-title">Proyek & Eksplorasi</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-info">
+          <h3>Eksplorasi Cloud Deployment</h3>
+          <p>Implementasi penyebaran aplikasi sederhana menggunakan layanan platform cloud.</p>
+          <span class="project-tag">Cloud Computing</span>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-info">
+          <h3>Sistem Manajemen Informasi</h3>
+          <p>Perancangan struktur alur informasi untuk efisiensi komunikasi data dalam organisasi.</p>
+          <span class="project-tag">Manajemen Informasi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="container" id="contact">
+    <h2 class="section-title">Mari Terhubung</h2>
+    <div class="contact-card">
+      <p>Tertarik untuk berkolaborasi atau sekadar berdiskusi tentang Cloud Computing dan Sistem Informasi?</p>
+      <p style="margin-top: 15px; font-weight: 600; color: #1769aa;">
+        <i class="fa-solid fa-envelope"></i> ptriocta16@gmail.com
+      </p>
+      <div class="contact-info">
+        <a href="mailto:ptriocta16@gmail.com" title="Email"><i class="fa-solid fa-paper-plane"></i></a>
+        <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Putri Octavianty. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
