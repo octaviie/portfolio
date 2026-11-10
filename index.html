@@ -95,7 +95,7 @@ nav li a.on{border-color:var(--peach);color:var(--ink)}
 /* karya */
 .works{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
 .work figure{border-radius:20px;overflow:hidden;aspect-ratio:16/10;background:linear-gradient(135deg,var(--wine),var(--coral));display:grid;place-items:center}
-.work figure img,.work figure video{width:100%;height:100%;object-fit:cover;display:block}
+.work figure img,.work figure video,.work figure iframe{width:100%;height:100%;object-fit:cover;display:block;border:0}
 .work figure .ph{font-family:var(--serif);font-style:italic;color:var(--peach);padding:20px;text-align:center}
 .work h3{font-size:1.4rem;margin:16px 0 6px;color:var(--peach)}
 .work p{color:var(--muted);max-width:46ch}
@@ -227,23 +227,19 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 0 50px
     <h2 class="it">Selected work</h2>
     <div class="works">
       <article class="work">
-        <figure>
-          <!-- Untuk video: <video src="video/proyek1.mp4" controls preload="metadata" poster="img/proyek1.jpg"></video> -->
-          <!-- Untuk gambar: <img src="img/proyek1.jpg" alt="Deskripsi gambar"> -->
-          <div class="ph"><video src="https://www.youtube.com/embed/KXmWclVlQ8g?si=_8daO493M0l-B6YR" controls preload="metadata" poster="foto.jpg"></video></div>
-        </figure>
+        <figure><iframe src="https://www.youtube.com/embed/mDc9JaEERBU" title="Video proyek 3" loading="lazy" allowfullscreen></iframe></figure>
         <h3>Judul proyek 1</h3>
         <p>Ceritakan singkat: masalahnya apa, apa perananmu, dan hasilnya.</p>
         <p class="meta">Peran · Tahun</p>
       </article>
       <article class="work">
-        <figure><div class="ph"><video src="https://www.instagram.com/reel/DCY4q9vywLO/?utm_source=ig_web_copy_link&dlrf=NTc4MTIwNjQ2YQ==" controls preload="metadata" poster="img/proyek1.jpg"></video> --></div></figure>
+        <figure><iframe src="https://www.instagram.com/reel/DCY4q9vywLO/embed" title="Video proyek 2" loading="lazy" allowfullscreen></iframe></figure>
         <h3>Judul proyek 2</h3>
         <p>Ceritakan singkat: masalahnya apa, apa perananmu, dan hasilnya.</p>
         <p class="meta">Peran · Tahun</p>
       </article>
       <article class="work">
-        <figure><div class="ph"><video src="https://www.youtube.com/embed/mDc9JaEERBU?si=bSfkqcxyp6XNoFsF" controls preload="metadata" poster="foto.jpg"></video></div></figure>
+        <figure><iframe src="https://www.youtube.com/embed/mDc9JaEERBU" title="Video proyek 3" loading="lazy" allowfullscreen></iframe></figure>
         <h3>Judul proyek 3</h3>
         <p>Ceritakan singkat: masalahnya apa, apa perananmu, dan hasilnya.</p>
         <p class="meta">Peran · Tahun</p>
