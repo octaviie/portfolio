@@ -19,7 +19,7 @@ a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:var(--serif);line-height:1}
 section{padding:80px 0}
-
+ 
 /* nav pill */
 .nav{margin:calc(22px + env(safe-area-inset-top,0px)) auto 0;max-width:1080px;padding:0 24px}
 .nav>div{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid rgba(227,181,164,.45);border-radius:999px;padding:10px 12px 10px 26px;background:rgba(22,0,41,.45);backdrop-filter:blur(10px)}
@@ -27,7 +27,7 @@ section{padding:80px 0}
 .nav ul{display:flex;gap:6px;list-style:none;padding:0;overflow-x:auto}
 .nav li a{display:block;padding:7px 16px;border-radius:999px;text-decoration:none;font-size:.92rem;white-space:nowrap}
 .nav li a:hover,.nav li a.cur{border:1px solid var(--almond);padding:6px 15px}
-
+ 
 /* hero */
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:70px 0 50px}
 .badge{display:inline-block;border:1px solid var(--almond);border-radius:50%/60%;padding:2px 16px;color:var(--almond);font-size:.95rem;margin-bottom:6px}
@@ -39,7 +39,7 @@ section{padding:80px 0}
 .btn.fill:hover{background:transparent}
 .btn.line{border-color:var(--almond);margin-left:10px}
 .btn.line:hover{background:var(--almond);color:var(--night)}
-
+ 
 /* photo card (rounded-rect + offset shape) */
 .photo{position:relative;justify-self:center;width:min(100%,320px);aspect-ratio:3/4}
 .photo::before{content:"";position:absolute;inset:0;transform:translate(18px,-18px);background:var(--lobster);border-radius:48px;opacity:.55}
@@ -49,7 +49,7 @@ section{padding:80px 0}
 .frame b{font-family:var(--serif);font-size:7rem;font-weight:800;color:var(--linen)}
 .sticker{position:absolute;z-index:2;background:var(--linen);color:var(--lobster);font-weight:700;font-size:.85rem;padding:6px 16px;border-radius:999px;transform:rotate(-5deg)}
 .s1{left:-22px;bottom:70px}.s2{right:-10px;bottom:20px;transform:rotate(4deg)}
-
+ 
 /* about */
 .hello{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
 .hello h2{font-size:clamp(3.5rem,9vw,6rem);font-weight:800;color:var(--almond);margin-bottom:18px}
@@ -65,7 +65,7 @@ section{padding:80px 0}
 .connect{display:flex;gap:18px;align-items:center;margin-top:30px;flex-wrap:wrap}
 .connect b{background:var(--lobster);padding:8px 20px;border-radius:12px;font-weight:700}
 .connect a{text-underline-offset:4px}
-
+ 
 /* experience */
 .xp h2{font-size:clamp(2rem,5vw,3rem);margin:0 0 26px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -73,7 +73,7 @@ section{padding:80px 0}
 .card.pink{background:var(--lobster);color:var(--linen)}
 .card.glass{background:rgba(119,51,68,.45);border:1px solid rgba(227,181,164,.35);backdrop-filter:blur(8px)}
 .card b{display:block}
-
+ 
 /* project folder tabs */
 .pj h2{font-size:clamp(2.2rem,6vw,4rem);font-weight:400;font-style:italic;margin-bottom:30px;color:var(--almond)}
 .strips{display:flex;gap:12px;height:480px}
@@ -87,7 +87,7 @@ section{padding:80px 0}
 .pbody a{align-self:flex-start;margin-top:6px;padding:8px 20px;border-radius:999px;border:1px solid currentColor;text-decoration:none;font-weight:500}
 .c0{background:var(--almond);color:var(--plum)}.c1{background:var(--lobster);color:var(--night)}
 .c2{background:var(--linen);color:var(--plum)}.c3{background:var(--plum);color:var(--linen);border:1px solid var(--almond)}
-
+ 
 /* contact */
 .toc{text-align:center}
 .toc h2{font-size:clamp(3rem,9vw,6rem);font-weight:800;color:var(--almond)}
@@ -95,7 +95,7 @@ section{padding:80px 0}
 .pills{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:640px;margin:0 auto 34px}
 .pills a{background:var(--lobster);border-radius:999px;padding:14px;font-weight:700;text-decoration:underline;text-underline-offset:5px}
 footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--almond);opacity:.8;font-size:.88rem}
-
+ 
 @media (max-width:800px){
  .hero,.hello,.two,.cols{grid-template-columns:1fr}
  .photo{order:-1;width:min(70%,260px);margin-bottom:10px}
@@ -116,7 +116,7 @@ footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align
     <li><a href="#pengalaman">Pengalaman</a></li><li><a href="#proyek">Proyek</a></li><li><a href="#kontak">Kontak</a></li>
   </ul>
 </div></div>
-
+ 
 <main class="wrap">
   <div class="hero" id="home">
     <div>
@@ -134,7 +134,7 @@ footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align
       <span class="sticker s1">[Profesi]</span><span class="sticker s2">[Kota]</span>
     </div>
   </div>
-
+ 
   <section id="tentang">
     <div class="hello">
       <div>
@@ -156,7 +156,7 @@ footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align
       </div>
     </div>
   </section>
-
+ 
   <section id="pengalaman" class="xp">
     <h2>Pengalaman & organisasi</h2>
     <div class="two">
@@ -172,12 +172,12 @@ footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align
       </ul></div>
     </div>
   </section>
-
+ 
   <section id="proyek" class="pj">
     <h2>Selected work</h2>
     <div class="strips" id="strips"></div>
   </section>
-
+ 
   <section id="kontak" class="toc">
     <h2>Ayo ngobrol</h2>
     <p>Punya ide atau tawaran kerja sama? Pilih jalurmu, aku senang membalas.</p>
@@ -190,7 +190,7 @@ footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align
   </section>
 </main>
 <footer>© <span id="yr"></span> Putri Octavianty. Dibuat dengan GitHub Pages.</footer>
-
+ 
 <script>
 /* ====== EDIT BAGIAN INI ====== */
 const CONFIG = {
@@ -210,7 +210,7 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":
 $("yr").textContent = new Date().getFullYear();
 $("gh").href = $("gh2").href = "https://github.com/" + CONFIG.username;
 $("skills").innerHTML = CONFIG.skills.map(s => "<span>" + esc(s) + "</span>").join("");
-
+ 
 function render(list){
   $("strips").innerHTML = list.slice(0,4).map((p,i) =>
     '<article class="strip c'+i+(i===0?' on':'')+'"><button class="tab" aria-expanded="'+(i===0)+'">'+esc(p.t)+'</button>' +
@@ -221,7 +221,7 @@ function render(list){
   }));
 }
 render(CONFIG.projects);
-
+ 
 fetch("https://api.github.com/users/" + CONFIG.username + "/repos?sort=updated&per_page=30")
   .then(r => r.ok ? r.json() : Promise.reject())
   .then(l => {
@@ -231,3 +231,5 @@ fetch("https://api.github.com/users/" + CONFIG.username + "/repos?sort=updated&p
 </script>
 </body>
 </html>
+ 
+Claude selesai menulis balasan
