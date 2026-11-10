@@ -1,286 +1,233 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Putri Octavianty | Profil Mahasiswa</title>
-<meta name="description" content="Profil Putri Octavianty, mahasiswa Manajemen Informasi Komunikasi.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Putri Octavianty · Portofolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,800;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  /* ============ WARNA & FONT (ubah di sini) ============ */
-  :root {
-    --tinta: #1b1633;
-    --tinta-2: #251e45;
-    --kertas: #f6f1fb;
-    --kabut: #b9b1d6;
-    --kunyit: #f2b94b;
-    --anggrek: #b58cf0;
-    --garis: rgba(246, 241, 251, .16);
-    --display: "Fraunces", Georgia, serif;
-    --body: "Manrope", system-ui, sans-serif;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
-  body { background: var(--tinta); color: var(--kertas); font-family: var(--body);
-         line-height: 1.7; font-size: 1.05rem; }
-  a { color: inherit; }
-  :focus-visible { outline: 3px solid var(--kunyit); outline-offset: 3px; }
-  .wrap { width: min(1080px, 100% - 40px); margin-inline: auto; }
-  section { padding: 96px 0; }
-  h2 { font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 5vw, 3.2rem);
-       line-height: 1.1; margin-bottom: 12px; }
-  .lead { color: var(--kabut); max-width: 56ch; margin-bottom: 44px; }
-  /* penanda bagian yang harus kamu isi; hapus class="isi" setelah diisi */
-  .isi { background: rgba(242,185,75,.18); border-bottom: 2px dashed var(--kunyit);
-         padding: 0 4px; border-radius: 3px; }
+:root{--linen:#F5E9E2;--almond:#E3B5A4;--lobster:#D44D5C;--plum:#773344;--night:#160029;
+ --serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;background:var(--night)}
+body{color:var(--linen);font:400 1rem/1.7 var(--sans);-webkit-font-smoothing:antialiased;
+ background:radial-gradient(70% 40% at 85% 0%,#8a3a55 0%,transparent 70%),radial-gradient(60% 35% at 0% 45%,var(--plum) 0%,transparent 70%),radial-gradient(60% 30% at 100% 80%,#5a2040 0%,transparent 70%),var(--night)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--almond);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);line-height:1}
+section{padding:80px 0}
 
-  nav { position: sticky; top: 0; z-index: 10; background: rgba(27,22,51,.92);
-        backdrop-filter: blur(8px); border-bottom: 1px solid var(--garis); }
-  nav .wrap { display: flex; justify-content: space-between; align-items: center;
-              gap: 16px; flex-wrap: wrap; padding: 12px 0; }
-  .logo { font-family: var(--display); font-weight: 900; font-size: 1.3rem; text-decoration: none; }
-  .logo span { color: var(--kunyit); }
-  nav ul { list-style: none; display: flex; gap: 22px; flex-wrap: wrap; }
-  nav ul a { text-decoration: none; color: var(--kabut); font-weight: 500; font-size: .95rem; }
-  nav ul a:hover { color: var(--kertas); }
+/* nav pill */
+.nav{margin:calc(22px + env(safe-area-inset-top,0px)) auto 0;max-width:1080px;padding:0 24px}
+.nav>div{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid rgba(227,181,164,.45);border-radius:999px;padding:10px 12px 10px 26px;background:rgba(22,0,41,.45);backdrop-filter:blur(10px)}
+.logo{font-family:var(--serif);font-style:italic;font-size:1.3rem;text-decoration:none;color:var(--almond)}
+.nav ul{display:flex;gap:6px;list-style:none;padding:0;overflow-x:auto}
+.nav li a{display:block;padding:7px 16px;border-radius:999px;text-decoration:none;font-size:.92rem;white-space:nowrap}
+.nav li a:hover,.nav li a.cur{border:1px solid var(--almond);padding:6px 15px}
 
-  .hero { padding: 80px 0 100px; overflow: hidden; }
-  .hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
-  .salam { color: var(--kunyit); font-weight: 700; margin-bottom: 10px; }
-  .hero h1 { font-family: var(--display); font-weight: 900; line-height: .95;
-             font-size: clamp(3.2rem, 9vw, 6.6rem); letter-spacing: -0.02em; }
-  .hero h1 em { font-style: italic; font-weight: 500; color: var(--anggrek); display: block; }
-  .hero p.sub { margin: 28px 0 32px; color: var(--kabut); max-width: 46ch; font-size: 1.15rem; }
-  .tombol { display: inline-block; padding: 13px 26px; border-radius: 999px; font-weight: 700;
-            text-decoration: none; transition: transform .15s; }
-  .tombol:hover { transform: translateY(-2px); }
-  .utama { background: var(--kunyit); color: var(--tinta); }
-  .garis { border: 1.5px solid var(--garis); margin-left: 10px; }
-  .foto { position: relative; aspect-ratio: 4 / 5; border-radius: 200px 200px 24px 24px;
-          background: var(--tinta-2); border: 1.5px solid var(--garis); overflow: hidden;
-          display: grid; place-items: center; }
-  .foto::before { content: "PO"; font-family: var(--display); font-weight: 900;
-                  font-size: clamp(6rem, 16vw, 11rem); color: transparent;
-                  -webkit-text-stroke: 2px var(--anggrek); opacity: .55; }
-  .foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .hero .salam, .hero h1, .hero p.sub, .hero .aksi { animation: masuk .8s both; }
-  .hero .salam { animation-delay: .05s; } .hero h1 { animation-delay: .15s; }
-  .hero p.sub { animation-delay: .3s; } .hero .aksi { animation-delay: .4s; }
-  @keyframes masuk { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+/* hero */
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:70px 0 50px}
+.badge{display:inline-block;border:1px solid var(--almond);border-radius:50%/60%;padding:2px 16px;color:var(--almond);font-size:.95rem;margin-bottom:6px}
+.hero h1{font-weight:800;font-size:clamp(4rem,13vw,9rem);letter-spacing:-.03em;color:var(--lobster);text-shadow:4px 5px 0 var(--plum)}
+.hero em{display:block;margin-top:22px;font-family:var(--serif);font-weight:400;font-size:1.35rem;color:var(--linen)}
+.hero p{max-width:30em;margin:14px 0 30px;color:var(--almond)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;border-radius:999px;border:1px solid var(--lobster);text-decoration:none;font-weight:500;transition:background .2s,color .2s}
+.btn.fill{background:var(--lobster);color:var(--linen)}
+.btn.fill:hover{background:transparent}
+.btn.line{border-color:var(--almond);margin-left:10px}
+.btn.line:hover{background:var(--almond);color:var(--night)}
 
-  .tentang { background: var(--tinta-2); }
-  .tentang .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
-  .data div { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0;
-              border-bottom: 1px solid var(--garis); }
-  .data dt { color: var(--kabut); }
-  .data dd { font-weight: 700; text-align: right; }
-  .tentang p + p { margin-top: 16px; }
-  .kutipan { font-family: var(--display); font-style: italic; font-size: 1.5rem; line-height: 1.4;
-             color: var(--kunyit); margin-bottom: 24px; }
+/* photo card (rounded-rect + offset shape) */
+.photo{position:relative;justify-self:center;width:min(100%,320px);aspect-ratio:3/4}
+.photo::before{content:"";position:absolute;inset:0;transform:translate(18px,-18px);background:var(--lobster);border-radius:48px;opacity:.55}
+.frame{position:absolute;inset:0;border-radius:48px;overflow:hidden;border:1px solid var(--almond);display:grid;place-items:center;
+ background:linear-gradient(160deg,var(--almond),var(--lobster) 70%,var(--plum))}
+.frame img{width:100%;height:100%;object-fit:cover}
+.frame b{font-family:var(--serif);font-size:7rem;font-weight:800;color:var(--linen)}
+.sticker{position:absolute;z-index:2;background:var(--linen);color:var(--lobster);font-weight:700;font-size:.85rem;padding:6px 16px;border-radius:999px;transform:rotate(-5deg)}
+.s1{left:-22px;bottom:70px}.s2{right:-10px;bottom:20px;transform:rotate(4deg)}
 
-  .linimasa { list-style: none; border-left: 2px solid var(--anggrek); margin-left: 8px; }
-  .linimasa li { position: relative; padding: 0 0 38px 32px; }
-  .linimasa li::before { content: ""; position: absolute; left: -9px; top: 8px; width: 16px; height: 16px;
-                         background: var(--kunyit); border-radius: 50%; border: 3px solid var(--tinta); }
-  .waktu { color: var(--kunyit); font-weight: 700; font-size: .95rem; }
-  .linimasa h3 { font-family: var(--display); font-size: 1.5rem; line-height: 1.25; margin: 2px 0 6px; }
-  .tempat { color: var(--anggrek); font-weight: 500; margin-bottom: 6px; }
-  .linimasa p { color: var(--kabut); max-width: 62ch; }
+/* about */
+.hello{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.hello h2{font-size:clamp(3.5rem,9vw,6rem);font-weight:800;color:var(--almond);margin-bottom:18px}
+.hello h3,.cols h3,.xp h2{font-weight:600;font-size:1.7rem;color:var(--almond);margin:26px 0 12px}
+.hello p{color:var(--linen);opacity:.9}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{background:var(--almond);color:var(--plum);font-weight:700;padding:10px 18px;border-radius:16px}
+.chips span:nth-child(3n){background:var(--lobster);color:var(--linen)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.cols ul,.card ul{padding-left:1.1rem}
+.cols li,.card li{margin-bottom:8px}
+.cols small,.card small{display:block;opacity:.75}
+.connect{display:flex;gap:18px;align-items:center;margin-top:30px;flex-wrap:wrap}
+.connect b{background:var(--lobster);padding:8px 20px;border-radius:12px;font-weight:700}
+.connect a{text-underline-offset:4px}
 
-  .keahlian { background: var(--tinta-2); }
-  .dua { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
-  h3.judul { font-family: var(--display); font-size: 1.6rem; margin-bottom: 18px; }
-  .chip-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; }
-  .chip-list li { padding: 8px 18px; border: 1.5px solid var(--garis); border-radius: 999px; font-weight: 500; }
-  .chip-list.warna li { border-color: var(--anggrek); }
-  .minat-list { list-style: none; display: grid; gap: 18px; }
-  .minat-list li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: start; }
-  .minat-list .ikon { font-size: 1.9rem; line-height: 1.2; }
-  .minat-list strong { font-family: var(--display); font-size: 1.2rem; display: block; }
-  .minat-list .ket { color: var(--kabut); }
+/* experience */
+.xp h2{font-size:clamp(2rem,5vw,3rem);margin:0 0 26px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{border-radius:32px;padding:34px 34px 26px}
+.card.pink{background:var(--lobster);color:var(--linen)}
+.card.glass{background:rgba(119,51,68,.45);border:1px solid rgba(227,181,164,.35);backdrop-filter:blur(8px)}
+.card b{display:block}
 
-  .galeri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .galeri figure { position: relative; aspect-ratio: 1; border-radius: 18px; overflow: hidden;
-                   background: var(--tinta-2); border: 1.5px dashed var(--garis);
-                   display: grid; place-items: center; color: var(--kabut); text-align: center; padding: 16px; }
-  .galeri img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .galeri figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 12px;
-                       background: linear-gradient(transparent, rgba(27,22,51,.9)); color: var(--kertas);
-                       font-weight: 500; font-size: .95rem; text-align: left; }
+/* project folder tabs */
+.pj h2{font-size:clamp(2.2rem,6vw,4rem);font-weight:400;font-style:italic;margin-bottom:30px;color:var(--almond)}
+.strips{display:flex;gap:12px;height:480px}
+.strip{flex:0 0 78px;border-radius:30px;overflow:hidden;display:flex;transition:flex .5s cubic-bezier(.3,.7,.2,1)}
+.strip.on{flex:1 1 auto}
+.tab{all:unset;cursor:pointer;flex:0 0 78px;display:flex;align-items:flex-end;justify-content:center;padding:22px 0;writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--serif);font-style:italic;font-size:1.5rem}
+.tab:focus-visible{outline:2px solid var(--linen);outline-offset:-6px;border-radius:30px}
+.pbody{display:none;flex-direction:column;justify-content:flex-end;gap:10px;padding:30px;min-width:260px}
+.on .pbody{display:flex}
+.pbody h3{font-size:1.9rem}
+.pbody a{align-self:flex-start;margin-top:6px;padding:8px 20px;border-radius:999px;border:1px solid currentColor;text-decoration:none;font-weight:500}
+.c0{background:var(--almond);color:var(--plum)}.c1{background:var(--lobster);color:var(--night)}
+.c2{background:var(--linen);color:var(--plum)}.c3{background:var(--plum);color:var(--linen);border:1px solid var(--almond)}
 
-  .kontak { background: var(--kunyit); color: var(--tinta); }
-  .kontak h2 { font-size: clamp(2.4rem, 7vw, 5rem); }
-  .kontak .lead { color: #4a3d1c; }
-  .kontak-list { list-style: none; display: grid; gap: 12px; max-width: 520px; }
-  .kontak-list a { display: flex; justify-content: space-between; gap: 16px; padding: 16px 22px;
-                   background: var(--tinta); color: var(--kertas); border-radius: 14px; text-decoration: none;
-                   font-weight: 700; transition: transform .15s; }
-  .kontak-list a:hover { transform: translateX(6px); }
-  .kontak-list small { color: var(--kabut); font-weight: 500; }
+/* contact */
+.toc{text-align:center}
+.toc h2{font-size:clamp(3rem,9vw,6rem);font-weight:800;color:var(--almond)}
+.toc p{margin:16px auto 30px;max-width:28em;color:var(--almond)}
+.pills{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:640px;margin:0 auto 34px}
+.pills a{background:var(--lobster);border-radius:999px;padding:14px;font-weight:700;text-decoration:underline;text-underline-offset:5px}
+footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--almond);opacity:.8;font-size:.88rem}
 
-  footer { padding: 28px 0; text-align: center; color: var(--kabut); font-size: .9rem; }
-
-  @media (max-width: 820px) {
-    section { padding: 68px 0; }
-    .hero .wrap, .tentang .wrap, .dua { grid-template-columns: 1fr; gap: 36px; }
-    .foto { max-width: 340px; }
-    .galeri { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-  }
+@media (max-width:800px){
+ .hero,.hello,.two,.cols{grid-template-columns:1fr}
+ .photo{order:-1;width:min(70%,260px);margin-bottom:10px}
+ .nav>div{padding-left:18px}.logo{display:none}
+ .strips{flex-direction:column;height:auto}
+ .strip{flex:none;flex-direction:column}.strip.on{flex:none}
+ .tab{writing-mode:horizontal-tb;transform:none;flex:none;padding:18px 24px;justify-content:flex-start}
+ .pbody{padding:6px 24px 26px;min-width:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<div class="nav"><div>
+  <a class="logo" href="#home">putri</a>
+  <ul>
+    <li><a href="#home" class="cur">Beranda</a></li><li><a href="#tentang">Tentang</a></li>
+    <li><a href="#pengalaman">Pengalaman</a></li><li><a href="#proyek">Proyek</a></li><li><a href="#kontak">Kontak</a></li>
+  </ul>
+</div></div>
 
-<nav>
-  <div class="wrap">
-    <a class="logo" href="#beranda">Putri<span>.</span></a>
-    <ul>
-      <li><a href="#tentang">Tentang</a></li>
-      <li><a href="#pengalaman">Pengalaman</a></li>
-      <li><a href="#keahlian">Keahlian</a></li>
-      <li><a href="#galeri">Galeri</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ===================== BERANDA ===================== -->
-<header class="hero" id="beranda">
-  <div class="wrap">
+<main class="wrap">
+  <div class="hero" id="home">
     <div>
-      <p class="salam">Halo, saya</p>
-      <h1>Putri <em>Octavianty</em></h1>
-      <p class="sub">Mahasiswa Manajemen Informasi Komunikasi yang sedang belajar Cloud Computing.
-        <span class="isi">[ISI: satu kalimat tentang dirimu, misalnya minat atau cita-cita]</span></p>
-      <div class="aksi">
-        <a class="tombol utama" href="#tentang">Kenali saya</a>
-        <a class="tombol garis" href="#kontak">Hubungi saya</a>
+      <span class="badge">2026</span>
+      <h1>Portfolio</h1>
+      <em>Selamat datang di rumah kecilku!</em>
+      <p>Aku Putri Octavianty. [Tulis satu kalimat tentang profesimu dan apa yang kamu kerjakan.]</p>
+      <a class="btn fill" href="#proyek">Lihat proyekku</a><a class="btn line" href="#kontak">Hubungi aku</a>
+    </div>
+    <div class="photo">
+      <div class="frame">
+        <!-- Ganti dengan fotomu: <img src="foto.jpg" alt="Putri Octavianty"> -->
+        <b>P</b>
+      </div>
+      <span class="sticker s1">[Profesi]</span><span class="sticker s2">[Kota]</span>
+    </div>
+  </div>
+
+  <section id="tentang">
+    <div class="hello">
+      <div>
+        <h2>Halo!</h2>
+        <p>Aku <b>Putri Octavianty</b>, [usia / jurusan / profesi]. [Ceritakan apa yang kamu sukai, jenis pekerjaan yang kamu cari, dan satu hal yang membuatmu berbeda.]</p>
+        <div class="connect"><b>Let’s connect</b>
+          <a href="https://www.linkedin.com/in/putri-octavianty-/" target="_blank" rel="noopener">LinkedIn</a>
+          <a id="gh" href="#" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:email@kamu.com">email@kamu.com</a>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-top:0">Keahlian teknis</h3>
+        <div class="chips" id="skills"></div>
+        <div class="cols">
+          <div><h3>Pendidikan</h3><ul><li><b>[Nama kampus]</b><small>[Tahun] · [Jurusan]</small></li></ul></div>
+          <div><h3>Soft skills</h3><ul><li>Komunikasi</li><li>Detail</li><li>Kolaborasi</li><li>Adaptif</li></ul></div>
+        </div>
       </div>
     </div>
-    <div class="foto">
-      <!-- Simpan fotomu di folder assets dengan nama foto-profil.jpg -->
-      <img src="assets/foto-profil.jpg" alt="Foto Putri Octavianty" onerror="this.remove()">
+  </section>
+
+  <section id="pengalaman" class="xp">
+    <h2>Pengalaman & organisasi</h2>
+    <div class="two">
+      <div class="card pink"><ul>
+        <li><b>[Jabatan terbaru]</b>[Perusahaan]<small>[2025 – sekarang]</small></li>
+        <li><b>[Jabatan]</b>[Perusahaan]<small>[Tahun]</small></li>
+        <li><b>[Jabatan]</b>[Perusahaan]<small>[Tahun]</small></li>
+      </ul></div>
+      <div class="card glass"><ul>
+        <li><b>[Organisasi / magang]</b>[Nama]<small>[Tahun]</small></li>
+        <li><b>[Organisasi / magang]</b>[Nama]<small>[Tahun]</small></li>
+        <li><b>[Sertifikasi / penghargaan]</b>[Nama]<small>[Tahun]</small></li>
+      </ul></div>
     </div>
-  </div>
-</header>
+  </section>
 
-<!-- ===================== TENTANG ===================== -->
-<section class="tentang" id="tentang">
-  <div class="wrap">
-    <div>
-      <h2>Tentang saya</h2>
-      <p class="kutipan">“<span class="isi">[ISI: motto atau kalimat favoritmu]</span>”</p>
-      <p><span class="isi">[ISI: paragraf perkenalan singkat. Ringkas dari bagian "About" di LinkedIn-mu.]</span></p>
-      <p><span class="isi">[ISI: tujuan atau rencana ke depan, misalnya karier yang ingin kamu tekuni.]</span></p>
+  <section id="proyek" class="pj">
+    <h2>Selected work</h2>
+    <div class="strips" id="strips"></div>
+  </section>
+
+  <section id="kontak" class="toc">
+    <h2>Ayo ngobrol</h2>
+    <p>Punya ide atau tawaran kerja sama? Pilih jalurmu, aku senang membalas.</p>
+    <div class="pills">
+      <a href="mailto:email@kamu.com">Email</a>
+      <a href="https://www.linkedin.com/in/putri-octavianty-/" target="_blank" rel="noopener">LinkedIn</a>
+      <a id="gh2" href="#" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://instagram.com/usernamekamu" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <dl class="data">
-      <div><dt>Nama lengkap</dt><dd>Putri Octavianty</dd></div>
-      <div><dt>Asal</dt><dd><span class="isi">[ISI: kota asal]</span></dd></div>
-      <div><dt>Kampus</dt><dd><span class="isi">[ISI: nama kampus]</span></dd></div>
-      <div><dt>Program studi</dt><dd>Manajemen Informasi Komunikasi</dd></div>
-      <div><dt>Sedang dipelajari</dt><dd>Cloud Computing</dd></div>
-    </dl>
-  </div>
-</section>
+  </section>
+</main>
+<footer>© <span id="yr"></span> Putri Octavianty. Dibuat dengan GitHub Pages.</footer>
 
-<!-- ===================== PENGALAMAN ===================== -->
-<section id="pengalaman">
-  <div class="wrap">
-    <h2>Pengalaman</h2>
-    <p class="lead">Organisasi, magang, kepanitiaan, atau proyek yang pernah saya jalani.</p>
-    <ol class="linimasa">
-      <!-- Salin blok <li> untuk menambah pengalaman. Urutkan dari yang terbaru. -->
-      <li>
-        <span class="waktu"><span class="isi">[ISI: 2025 sampai sekarang]</span></span>
-        <h3><span class="isi">[ISI: jabatan / peran]</span></h3>
-        <div class="tempat"><span class="isi">[ISI: nama organisasi / perusahaan]</span></div>
-        <p><span class="isi">[ISI: 1–2 kalimat tentang apa yang kamu kerjakan dan hasilnya]</span></p>
-      </li>
-      <li>
-        <span class="waktu"><span class="isi">[ISI: tahun]</span></span>
-        <h3><span class="isi">[ISI: jabatan / peran]</span></h3>
-        <div class="tempat"><span class="isi">[ISI: nama organisasi / perusahaan]</span></div>
-        <p><span class="isi">[ISI: deskripsi singkat]</span></p>
-      </li>
-      <li>
-        <span class="waktu">Sekarang</span>
-        <h3>Mahasiswa Manajemen Informasi Komunikasi</h3>
-        <div class="tempat"><span class="isi">[ISI: nama kampus]</span></div>
-        <p>Belajar Teknologi Internet dan Cloud Computing, termasuk mempublikasikan website pertama saya lewat GitHub Pages.</p>
-      </li>
-    </ol>
-  </div>
-</section>
+<script>
+/* ====== EDIT BAGIAN INI ====== */
+const CONFIG = {
+  username: "usernamegithubkamu",
+  skills: ["Skill 1","Skill 2","Skill 3","Skill 4","Skill 5","Skill 6"],
+  // dipakai jika repo GitHub belum bisa dimuat; isi dengan proyek pilihanmu
+  projects: [
+    {t:"Proyek satu", d:"Ceritakan singkat apa masalahnya, perananmu, dan hasilnya.", u:"#"},
+    {t:"Proyek dua",  d:"Ceritakan singkat apa masalahnya, perananmu, dan hasilnya.", u:"#"},
+    {t:"Proyek tiga", d:"Ceritakan singkat apa masalahnya, perananmu, dan hasilnya.", u:"#"},
+    {t:"Proyek empat",d:"Ceritakan singkat apa masalahnya, perananmu, dan hasilnya.", u:"#"}
+  ]
+};
+/* ============================= */
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("yr").textContent = new Date().getFullYear();
+$("gh").href = $("gh2").href = "https://github.com/" + CONFIG.username;
+$("skills").innerHTML = CONFIG.skills.map(s => "<span>" + esc(s) + "</span>").join("");
 
-<!-- ===================== KEAHLIAN & MINAT ===================== -->
-<section class="keahlian" id="keahlian">
-  <div class="wrap dua">
-    <div>
-      <h2>Keahlian</h2>
-      <p class="lead">Hal-hal yang sudah dan sedang saya kuasai.</p>
-      <h3 class="judul">Teknis</h3>
-      <ul class="chip-list" style="margin-bottom:28px">
-        <li>HTML &amp; CSS dasar</li>
-        <li>GitHub Pages</li>
-        <li><span class="isi">[ISI: mis. Canva]</span></li>
-        <li><span class="isi">[ISI: mis. Microsoft Office]</span></li>
-      </ul>
-      <h3 class="judul">Non-teknis</h3>
-      <ul class="chip-list warna">
-        <li><span class="isi">[ISI: mis. Komunikasi]</span></li>
-        <li><span class="isi">[ISI: mis. Kerja tim]</span></li>
-        <li><span class="isi">[ISI: mis. Public speaking]</span></li>
-      </ul>
-    </div>
-    <div>
-      <h2>Minat</h2>
-      <p class="lead">Di luar jam kuliah, saya menikmati ini.</p>
-      <ul class="minat-list">
-        <li><span class="ikon">✨</span><div><strong><span class="isi">[ISI: hobi 1]</span></strong><span class="ket"><span class="isi">[ISI: alasan kamu suka]</span></span></div></li>
-        <li><span class="ikon">🎧</span><div><strong><span class="isi">[ISI: hobi 2]</span></strong><span class="ket"><span class="isi">[ISI: alasan kamu suka]</span></span></div></li>
-        <li><span class="ikon">📚</span><div><strong><span class="isi">[ISI: hobi 3]</span></strong><span class="ket"><span class="isi">[ISI: alasan kamu suka]</span></span></div></li>
-      </ul>
-    </div>
-  </div>
-</section>
+function render(list){
+  $("strips").innerHTML = list.slice(0,4).map((p,i) =>
+    '<article class="strip c'+i+(i===0?' on':'')+'"><button class="tab" aria-expanded="'+(i===0)+'">'+esc(p.t)+'</button>' +
+    '<div class="pbody"><h3>'+esc(p.t)+'</h3><p>'+esc(p.d)+'</p><a href="'+esc(p.u)+'" target="_blank" rel="noopener">Lihat proyek</a></div></article>').join("");
+  const all = [...document.querySelectorAll(".strip")];
+  all.forEach(s => s.querySelector(".tab").addEventListener("click", () => {
+    all.forEach(x => { x.classList.toggle("on", x===s); x.querySelector(".tab").setAttribute("aria-expanded", x===s); });
+  }));
+}
+render(CONFIG.projects);
 
-<!-- ===================== GALERI ===================== -->
-<section id="galeri">
-  <div class="wrap">
-    <h2>Galeri</h2>
-    <p class="lead">Beberapa momen dari kegiatan dan hal yang saya sukai.</p>
-    <div class="galeri">
-      <!-- Simpan foto di folder assets: galeri-1.jpg sampai galeri-6.jpg -->
-      <figure>Foto 1<img src="assets/galeri-1.jpg" alt="Momen 1" onerror="this.remove()"><figcaption>Judul foto 1</figcaption></figure>
-      <figure>Foto 2<img src="assets/galeri-2.jpg" alt="Momen 2" onerror="this.remove()"><figcaption>Judul foto 2</figcaption></figure>
-      <figure>Foto 3<img src="assets/galeri-3.jpg" alt="Momen 3" onerror="this.remove()"><figcaption>Judul foto 3</figcaption></figure>
-      <figure>Foto 4<img src="assets/galeri-4.jpg" alt="Momen 4" onerror="this.remove()"><figcaption>Judul foto 4</figcaption></figure>
-      <figure>Foto 5<img src="assets/galeri-5.jpg" alt="Momen 5" onerror="this.remove()"><figcaption>Judul foto 5</figcaption></figure>
-      <figure>Foto 6<img src="assets/galeri-6.jpg" alt="Momen 6" onerror="this.remove()"><figcaption>Judul foto 6</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== KONTAK ===================== -->
-<section class="kontak" id="kontak">
-  <div class="wrap">
-    <h2>Mari terhubung.</h2>
-    <p class="lead">Terbuka untuk berkenalan, bertukar ide, dan berkolaborasi.</p>
-    <ul class="kontak-list">
-      <li><a href="https://www.linkedin.com/in/putri-octavianty-/" target="_blank" rel="noopener">LinkedIn <small>putri-octavianty-</small></a></li>
-      <li><a href="mailto:email-kamu@gmail.com">Email <small>email-kamu@gmail.com</small></a></li>
-      <li><a href="https://www.instagram.com/username/" target="_blank" rel="noopener">Instagram <small>@username</small></a></li>
-    </ul>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">© 2026 Putri Octavianty. Dibuat dengan HTML, CSS, dan GitHub Pages.</div>
-</footer>
-
+fetch("https://api.github.com/users/" + CONFIG.username + "/repos?sort=updated&per_page=30")
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(l => {
+    const top = l.filter(r => !r.fork).sort((a,b) => b.stargazers_count - a.stargazers_count).slice(0,4);
+    if (top.length) render(top.map(r => ({t:r.name, d:r.description || "Belum ada deskripsi.", u:r.html_url})));
+  }).catch(() => {});
+</script>
 </body>
 </html>
