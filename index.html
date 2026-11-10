@@ -1,26 +1,286 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profil Mahasiswa</title>
-  <style>
-    body { font-family: Arial; background: 
-#eaf2f8;
-           text-align: center; padding: 40px; }
-    .card { background: white; max-width: 500px;
-            margin: auto; padding: 30px; border-radius: 15px; }
-    h1 { color: 
-#1769aa; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Putri Octavianty | Profil Mahasiswa</title>
+<meta name="description" content="Profil Putri Octavianty, mahasiswa Manajemen Informasi Komunikasi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* ============ WARNA & FONT (ubah di sini) ============ */
+  :root {
+    --tinta: #1b1633;
+    --tinta-2: #251e45;
+    --kertas: #f6f1fb;
+    --kabut: #b9b1d6;
+    --kunyit: #f2b94b;
+    --anggrek: #b58cf0;
+    --garis: rgba(246, 241, 251, .16);
+    --display: "Fraunces", Georgia, serif;
+    --body: "Manrope", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body { background: var(--tinta); color: var(--kertas); font-family: var(--body);
+         line-height: 1.7; font-size: 1.05rem; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--kunyit); outline-offset: 3px; }
+  .wrap { width: min(1080px, 100% - 40px); margin-inline: auto; }
+  section { padding: 96px 0; }
+  h2 { font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 5vw, 3.2rem);
+       line-height: 1.1; margin-bottom: 12px; }
+  .lead { color: var(--kabut); max-width: 56ch; margin-bottom: 44px; }
+  /* penanda bagian yang harus kamu isi; hapus class="isi" setelah diisi */
+  .isi { background: rgba(242,185,75,.18); border-bottom: 2px dashed var(--kunyit);
+         padding: 0 4px; border-radius: 3px; }
+
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(27,22,51,.92);
+        backdrop-filter: blur(8px); border-bottom: 1px solid var(--garis); }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center;
+              gap: 16px; flex-wrap: wrap; padding: 12px 0; }
+  .logo { font-family: var(--display); font-weight: 900; font-size: 1.3rem; text-decoration: none; }
+  .logo span { color: var(--kunyit); }
+  nav ul { list-style: none; display: flex; gap: 22px; flex-wrap: wrap; }
+  nav ul a { text-decoration: none; color: var(--kabut); font-weight: 500; font-size: .95rem; }
+  nav ul a:hover { color: var(--kertas); }
+
+  .hero { padding: 80px 0 100px; overflow: hidden; }
+  .hero .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+  .salam { color: var(--kunyit); font-weight: 700; margin-bottom: 10px; }
+  .hero h1 { font-family: var(--display); font-weight: 900; line-height: .95;
+             font-size: clamp(3.2rem, 9vw, 6.6rem); letter-spacing: -0.02em; }
+  .hero h1 em { font-style: italic; font-weight: 500; color: var(--anggrek); display: block; }
+  .hero p.sub { margin: 28px 0 32px; color: var(--kabut); max-width: 46ch; font-size: 1.15rem; }
+  .tombol { display: inline-block; padding: 13px 26px; border-radius: 999px; font-weight: 700;
+            text-decoration: none; transition: transform .15s; }
+  .tombol:hover { transform: translateY(-2px); }
+  .utama { background: var(--kunyit); color: var(--tinta); }
+  .garis { border: 1.5px solid var(--garis); margin-left: 10px; }
+  .foto { position: relative; aspect-ratio: 4 / 5; border-radius: 200px 200px 24px 24px;
+          background: var(--tinta-2); border: 1.5px solid var(--garis); overflow: hidden;
+          display: grid; place-items: center; }
+  .foto::before { content: "PO"; font-family: var(--display); font-weight: 900;
+                  font-size: clamp(6rem, 16vw, 11rem); color: transparent;
+                  -webkit-text-stroke: 2px var(--anggrek); opacity: .55; }
+  .foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero .salam, .hero h1, .hero p.sub, .hero .aksi { animation: masuk .8s both; }
+  .hero .salam { animation-delay: .05s; } .hero h1 { animation-delay: .15s; }
+  .hero p.sub { animation-delay: .3s; } .hero .aksi { animation-delay: .4s; }
+  @keyframes masuk { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+  .tentang { background: var(--tinta-2); }
+  .tentang .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  .data div { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0;
+              border-bottom: 1px solid var(--garis); }
+  .data dt { color: var(--kabut); }
+  .data dd { font-weight: 700; text-align: right; }
+  .tentang p + p { margin-top: 16px; }
+  .kutipan { font-family: var(--display); font-style: italic; font-size: 1.5rem; line-height: 1.4;
+             color: var(--kunyit); margin-bottom: 24px; }
+
+  .linimasa { list-style: none; border-left: 2px solid var(--anggrek); margin-left: 8px; }
+  .linimasa li { position: relative; padding: 0 0 38px 32px; }
+  .linimasa li::before { content: ""; position: absolute; left: -9px; top: 8px; width: 16px; height: 16px;
+                         background: var(--kunyit); border-radius: 50%; border: 3px solid var(--tinta); }
+  .waktu { color: var(--kunyit); font-weight: 700; font-size: .95rem; }
+  .linimasa h3 { font-family: var(--display); font-size: 1.5rem; line-height: 1.25; margin: 2px 0 6px; }
+  .tempat { color: var(--anggrek); font-weight: 500; margin-bottom: 6px; }
+  .linimasa p { color: var(--kabut); max-width: 62ch; }
+
+  .keahlian { background: var(--tinta-2); }
+  .dua { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+  h3.judul { font-family: var(--display); font-size: 1.6rem; margin-bottom: 18px; }
+  .chip-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; }
+  .chip-list li { padding: 8px 18px; border: 1.5px solid var(--garis); border-radius: 999px; font-weight: 500; }
+  .chip-list.warna li { border-color: var(--anggrek); }
+  .minat-list { list-style: none; display: grid; gap: 18px; }
+  .minat-list li { display: grid; grid-template-columns: 52px 1fr; gap: 16px; align-items: start; }
+  .minat-list .ikon { font-size: 1.9rem; line-height: 1.2; }
+  .minat-list strong { font-family: var(--display); font-size: 1.2rem; display: block; }
+  .minat-list .ket { color: var(--kabut); }
+
+  .galeri { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .galeri figure { position: relative; aspect-ratio: 1; border-radius: 18px; overflow: hidden;
+                   background: var(--tinta-2); border: 1.5px dashed var(--garis);
+                   display: grid; place-items: center; color: var(--kabut); text-align: center; padding: 16px; }
+  .galeri img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .galeri figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 28px 14px 12px;
+                       background: linear-gradient(transparent, rgba(27,22,51,.9)); color: var(--kertas);
+                       font-weight: 500; font-size: .95rem; text-align: left; }
+
+  .kontak { background: var(--kunyit); color: var(--tinta); }
+  .kontak h2 { font-size: clamp(2.4rem, 7vw, 5rem); }
+  .kontak .lead { color: #4a3d1c; }
+  .kontak-list { list-style: none; display: grid; gap: 12px; max-width: 520px; }
+  .kontak-list a { display: flex; justify-content: space-between; gap: 16px; padding: 16px 22px;
+                   background: var(--tinta); color: var(--kertas); border-radius: 14px; text-decoration: none;
+                   font-weight: 700; transition: transform .15s; }
+  .kontak-list a:hover { transform: translateX(6px); }
+  .kontak-list small { color: var(--kabut); font-weight: 500; }
+
+  footer { padding: 28px 0; text-align: center; color: var(--kabut); font-size: .9rem; }
+
+  @media (max-width: 820px) {
+    section { padding: 68px 0; }
+    .hero .wrap, .tentang .wrap, .dua { grid-template-columns: 1fr; gap: 36px; }
+    .foto { max-width: 340px; }
+    .galeri { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>Profil Mahasiswa</h1>
-    <h2>Nama: Putri Octavianty</h2>
-    <p>Program Studi: Manajemen Informasi Komunikasi</p>
-    <p>Saya sedang belajar Cloud Computing.</p>
-    <p>Email: ptriocta16@gmail.com</p>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#beranda">Putri<span>.</span></a>
+    <ul>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#pengalaman">Pengalaman</a></li>
+      <li><a href="#keahlian">Keahlian</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
   </div>
+</nav>
+
+<!-- ===================== BERANDA ===================== -->
+<header class="hero" id="beranda">
+  <div class="wrap">
+    <div>
+      <p class="salam">Halo, saya</p>
+      <h1>Putri <em>Octavianty</em></h1>
+      <p class="sub">Mahasiswa Manajemen Informasi Komunikasi yang sedang belajar Cloud Computing.
+        <span class="isi">[ISI: satu kalimat tentang dirimu, misalnya minat atau cita-cita]</span></p>
+      <div class="aksi">
+        <a class="tombol utama" href="#tentang">Kenali saya</a>
+        <a class="tombol garis" href="#kontak">Hubungi saya</a>
+      </div>
+    </div>
+    <div class="foto">
+      <!-- Simpan fotomu di folder assets dengan nama foto-profil.jpg -->
+      <img src="assets/foto-profil.jpg" alt="Foto Putri Octavianty" onerror="this.remove()">
+    </div>
+  </div>
+</header>
+
+<!-- ===================== TENTANG ===================== -->
+<section class="tentang" id="tentang">
+  <div class="wrap">
+    <div>
+      <h2>Tentang saya</h2>
+      <p class="kutipan">“<span class="isi">[ISI: motto atau kalimat favoritmu]</span>”</p>
+      <p><span class="isi">[ISI: paragraf perkenalan singkat. Ringkas dari bagian "About" di LinkedIn-mu.]</span></p>
+      <p><span class="isi">[ISI: tujuan atau rencana ke depan, misalnya karier yang ingin kamu tekuni.]</span></p>
+    </div>
+    <dl class="data">
+      <div><dt>Nama lengkap</dt><dd>Putri Octavianty</dd></div>
+      <div><dt>Asal</dt><dd><span class="isi">[ISI: kota asal]</span></dd></div>
+      <div><dt>Kampus</dt><dd><span class="isi">[ISI: nama kampus]</span></dd></div>
+      <div><dt>Program studi</dt><dd>Manajemen Informasi Komunikasi</dd></div>
+      <div><dt>Sedang dipelajari</dt><dd>Cloud Computing</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ===================== PENGALAMAN ===================== -->
+<section id="pengalaman">
+  <div class="wrap">
+    <h2>Pengalaman</h2>
+    <p class="lead">Organisasi, magang, kepanitiaan, atau proyek yang pernah saya jalani.</p>
+    <ol class="linimasa">
+      <!-- Salin blok <li> untuk menambah pengalaman. Urutkan dari yang terbaru. -->
+      <li>
+        <span class="waktu"><span class="isi">[ISI: 2025 sampai sekarang]</span></span>
+        <h3><span class="isi">[ISI: jabatan / peran]</span></h3>
+        <div class="tempat"><span class="isi">[ISI: nama organisasi / perusahaan]</span></div>
+        <p><span class="isi">[ISI: 1–2 kalimat tentang apa yang kamu kerjakan dan hasilnya]</span></p>
+      </li>
+      <li>
+        <span class="waktu"><span class="isi">[ISI: tahun]</span></span>
+        <h3><span class="isi">[ISI: jabatan / peran]</span></h3>
+        <div class="tempat"><span class="isi">[ISI: nama organisasi / perusahaan]</span></div>
+        <p><span class="isi">[ISI: deskripsi singkat]</span></p>
+      </li>
+      <li>
+        <span class="waktu">Sekarang</span>
+        <h3>Mahasiswa Manajemen Informasi Komunikasi</h3>
+        <div class="tempat"><span class="isi">[ISI: nama kampus]</span></div>
+        <p>Belajar Teknologi Internet dan Cloud Computing, termasuk mempublikasikan website pertama saya lewat GitHub Pages.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== KEAHLIAN & MINAT ===================== -->
+<section class="keahlian" id="keahlian">
+  <div class="wrap dua">
+    <div>
+      <h2>Keahlian</h2>
+      <p class="lead">Hal-hal yang sudah dan sedang saya kuasai.</p>
+      <h3 class="judul">Teknis</h3>
+      <ul class="chip-list" style="margin-bottom:28px">
+        <li>HTML &amp; CSS dasar</li>
+        <li>GitHub Pages</li>
+        <li><span class="isi">[ISI: mis. Canva]</span></li>
+        <li><span class="isi">[ISI: mis. Microsoft Office]</span></li>
+      </ul>
+      <h3 class="judul">Non-teknis</h3>
+      <ul class="chip-list warna">
+        <li><span class="isi">[ISI: mis. Komunikasi]</span></li>
+        <li><span class="isi">[ISI: mis. Kerja tim]</span></li>
+        <li><span class="isi">[ISI: mis. Public speaking]</span></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Minat</h2>
+      <p class="lead">Di luar jam kuliah, saya menikmati ini.</p>
+      <ul class="minat-list">
+        <li><span class="ikon">✨</span><div><strong><span class="isi">[ISI: hobi 1]</span></strong><span class="ket"><span class="isi">[ISI: alasan kamu suka]</span></span></div></li>
+        <li><span class="ikon">🎧</span><div><strong><span class="isi">[ISI: hobi 2]</span></strong><span class="ket"><span class="isi">[ISI: alasan kamu suka]</span></span></div></li>
+        <li><span class="ikon">📚</span><div><strong><span class="isi">[ISI: hobi 3]</span></strong><span class="ket"><span class="isi">[ISI: alasan kamu suka]</span></span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALERI ===================== -->
+<section id="galeri">
+  <div class="wrap">
+    <h2>Galeri</h2>
+    <p class="lead">Beberapa momen dari kegiatan dan hal yang saya sukai.</p>
+    <div class="galeri">
+      <!-- Simpan foto di folder assets: galeri-1.jpg sampai galeri-6.jpg -->
+      <figure>Foto 1<img src="assets/galeri-1.jpg" alt="Momen 1" onerror="this.remove()"><figcaption>Judul foto 1</figcaption></figure>
+      <figure>Foto 2<img src="assets/galeri-2.jpg" alt="Momen 2" onerror="this.remove()"><figcaption>Judul foto 2</figcaption></figure>
+      <figure>Foto 3<img src="assets/galeri-3.jpg" alt="Momen 3" onerror="this.remove()"><figcaption>Judul foto 3</figcaption></figure>
+      <figure>Foto 4<img src="assets/galeri-4.jpg" alt="Momen 4" onerror="this.remove()"><figcaption>Judul foto 4</figcaption></figure>
+      <figure>Foto 5<img src="assets/galeri-5.jpg" alt="Momen 5" onerror="this.remove()"><figcaption>Judul foto 5</figcaption></figure>
+      <figure>Foto 6<img src="assets/galeri-6.jpg" alt="Momen 6" onerror="this.remove()"><figcaption>Judul foto 6</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KONTAK ===================== -->
+<section class="kontak" id="kontak">
+  <div class="wrap">
+    <h2>Mari terhubung.</h2>
+    <p class="lead">Terbuka untuk berkenalan, bertukar ide, dan berkolaborasi.</p>
+    <ul class="kontak-list">
+      <li><a href="https://www.linkedin.com/in/putri-octavianty-/" target="_blank" rel="noopener">LinkedIn <small>putri-octavianty-</small></a></li>
+      <li><a href="mailto:email-kamu@gmail.com">Email <small>email-kamu@gmail.com</small></a></li>
+      <li><a href="https://www.instagram.com/username/" target="_blank" rel="noopener">Instagram <small>@username</small></a></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Putri Octavianty. Dibuat dengan HTML, CSS, dan GitHub Pages.</div>
+</footer>
+
 </body>
 </html>
