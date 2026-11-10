@@ -20,7 +20,7 @@ a{color:inherit}
 h1,h2,h3{font-family:var(--serif);line-height:1}
 section{padding:80px 0}
 .nav,main,footer{position:relative;z-index:1}
- 
+
 /* ambient: blobs, glow, progress */
 .blob{position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(80px);opacity:.35}
 .b1{width:420px;height:420px;background:var(--lobster);top:-100px;right:-80px;animation:drift1 18s ease-in-out infinite alternate}
@@ -30,13 +30,13 @@ section{padding:80px 0}
 .bar{position:fixed;z-index:50;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--almond),var(--lobster));transform:scaleX(0);transform-origin:0 50%}
 @keyframes drift1{to{transform:translate(-160px,200px) scale(1.25)}}
 @keyframes drift2{to{transform:translate(220px,-160px) scale(1.2)}}
- 
+
 /* reveal */
 .js .rv{opacity:0}
 .rv.in{opacity:1;animation:up .9s var(--d,0s) var(--ease) backwards}
 @keyframes up{from{opacity:0;transform:translateY(36px)}}
 @keyframes pop{from{opacity:0;transform:scale(.5) rotate(-8deg)}}
- 
+
 /* nav pill */
 .nav{margin:calc(22px + env(safe-area-inset-top,0px)) auto 0;max-width:1080px;padding:0 24px;animation:drop .9s var(--ease) both}
 @keyframes drop{from{opacity:0;transform:translateY(-30px)}}
@@ -46,7 +46,7 @@ section{padding:80px 0}
 .nav li a{display:block;padding:7px 16px;border-radius:999px;text-decoration:none;font-size:.92rem;white-space:nowrap;border:1px solid transparent;transition:border-color .3s,background .3s,transform .3s}
 .nav li a:hover{border-color:var(--almond);transform:translateY(-2px)}
 .nav li a.cur{border-color:var(--almond);background:rgba(227,181,164,.15)}
- 
+
 /* hero */
 .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:70px 0 50px}
 .badge{display:inline-block;border:1px solid var(--almond);border-radius:50%/60%;padding:2px 16px;color:var(--almond);font-size:.95rem;margin-bottom:6px;animation:pulse 3s ease-in-out infinite}
@@ -65,7 +65,7 @@ section{padding:80px 0}
 .btn.fill:hover{background:transparent}
 .btn.line{border-color:var(--almond);margin-left:10px}
 .btn.line:hover{background:var(--almond);color:var(--night)}
- 
+
 /* photo card */
 .photo{position:relative;justify-self:center;width:min(100%,320px);aspect-ratio:3/4;animation:up 1s .5s var(--ease) backwards}
 .photo::before{content:"";position:absolute;inset:0;transform:translate(18px,-18px);background:var(--lobster);border-radius:48px;opacity:.55;animation:morph 8s ease-in-out infinite}
@@ -81,7 +81,7 @@ section{padding:80px 0}
 .s2{right:-10px;bottom:20px;animation:bob2 5s ease-in-out infinite}
 @keyframes bob1{0%,100%{transform:rotate(-5deg)}50%{transform:translateY(-10px) rotate(2deg)}}
 @keyframes bob2{0%,100%{transform:rotate(4deg)}50%{transform:translateY(-12px) rotate(-3deg)}}
- 
+
 /* marquee */
 .marq{overflow:hidden;background:var(--lobster);border-radius:999px;padding:14px 0;transform:rotate(-1.2deg);margin:10px -10px 30px}
 .marq div{display:flex;width:max-content;animation:run 22s linear infinite}
@@ -89,7 +89,7 @@ section{padding:80px 0}
 .marq span{font:italic 400 1.5rem var(--serif);padding:0 22px;white-space:nowrap}
 .marq span::after{content:"✦";margin-left:44px;color:var(--night)}
 @keyframes run{to{transform:translateX(-25%)}}
- 
+
 /* about */
 .hello{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
 .hello h2{font-size:clamp(3.5rem,9vw,6rem);font-weight:800;color:var(--almond);margin-bottom:18px}
@@ -111,7 +111,7 @@ section{padding:80px 0}
 .connect b{background:var(--lobster);padding:8px 20px;border-radius:12px;font-weight:700}
 .connect a{text-underline-offset:4px;transition:color .2s,text-underline-offset .2s}
 .connect a:hover{color:var(--almond);text-underline-offset:8px}
- 
+
 /* experience */
 .xp h2{font-size:clamp(2rem,5vw,3rem);margin:0 0 26px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -120,7 +120,7 @@ section{padding:80px 0}
 .card.pink{background:var(--lobster);color:var(--linen)}
 .card.glass{background:rgba(119,51,68,.45);border:1px solid rgba(227,181,164,.35);backdrop-filter:blur(8px)}
 .card b{display:block}
- 
+
 /* project folder tabs */
 .pj h2{font-size:clamp(2.2rem,6vw,4rem);font-weight:400;font-style:italic;margin-bottom:30px;color:var(--almond)}
 .strips{display:flex;gap:12px;height:480px}
@@ -139,7 +139,7 @@ section{padding:80px 0}
 .pbody a:hover{color:inherit}
 .c0{background:var(--almond);color:var(--plum)}.c1{background:var(--lobster);color:var(--night)}
 .c2{background:var(--linen);color:var(--plum)}.c3{background:var(--plum);color:var(--linen);border:1px solid var(--almond)}
- 
+
 /* contact */
 .toc{text-align:center}
 .toc h2{font-size:clamp(3rem,9vw,6rem);font-weight:800;color:var(--almond)}
@@ -148,7 +148,7 @@ section{padding:80px 0}
 .pills a{background:var(--lobster);border-radius:999px;padding:14px;font-weight:700;text-decoration:underline;text-underline-offset:5px;transition:transform .3s cubic-bezier(.3,1.6,.5,1),background .3s,color .3s}
 .pills a:hover{transform:translateY(-5px) scale(1.04);background:var(--almond);color:var(--plum)}
 footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--almond);opacity:.8;font-size:.88rem}
- 
+
 @media (hover:none){.glow{display:none}}
 @media (max-width:800px){
  .hero,.hello,.two,.cols{grid-template-columns:1fr}
@@ -165,7 +165,7 @@ footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align
 <body>
 <div class="bar" id="bar"></div>
 <div class="blob b1"></div><div class="blob b2"></div><div class="glow" id="glow"></div>
- 
+
 <div class="nav"><div>
   <a class="logo" href="#home">putri</a>
   <ul>
@@ -173,14 +173,14 @@ footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align
     <li><a href="#pengalaman">Pengalaman</a></li><li><a href="#proyek">Proyek</a></li><li><a href="#kontak">Kontak</a></li>
   </ul>
 </div></div>
- 
+
 <main class="wrap">
   <div class="hero" id="home">
     <div>
       <span class="badge">2026</span>
       <h1>Portfolio</h1>
       <em>Selamat datang di rumah kecilku!</em>
-      <p>Aku Putri Octavianty. [Tulis satu kalimat tentang profesimu dan apa yang kamu kerjakan.]</p>
+      <p>Aku Putri Octavianty, Exploring Enthusiast</p>
       <a class="btn fill" href="#proyek">Lihat proyekku</a><a class="btn line" href="#kontak">Hubungi aku</a>
     </div>
     <div class="photo">
@@ -191,34 +191,28 @@ footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align
       <span class="sticker s1">[Profesi]</span><span class="sticker s2">[Kota]</span>
     </div>
   </div>
- 
+
   <div class="marq" aria-hidden="true"><div id="mq"></div></div>
- 
-<section id="tentang">
+
+  <section id="tentang">
     <div class="hello">
       <div>
-        <h2>Halo! <i>👋</i></h2>
+        <h2>Halo!<i> 👋</i></h2>
         <p>Aku <b>Putri Octavianty</b>, 🌐 Digital communication & strategy enthusiast. Exploring information integrity, remote work, and tech-enabled career growth. Let's build together!</p>
-        
-        <div class="connect">
-          <b>Let’s connect:</b>
-          <a class="btn" href="https://www.linkedin.com/in/putri-octavianty-844b67344" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://instagram.com/ptrioxctvy" target="_blank" rel="noopener">Instagram</a>
-          <a class="btn email" href="mailto:octaviantyputri16@gmail.com">Email Professional</a>
+        <div class="connect"><b>Let’s connect</b>
         </div>
       </div>
-    </div>
       <div>
         <h3 style="margin-top:0">Keahlian teknis</h3>
         <div class="chips" id="skills"></div>
         <div class="cols">
-          <div><h3>Pendidikan</h3><ul><li><b>SMA Negeri 2 Tanjung Pinang</b><small>2022-2025 · Soshum</small></li></ul></div>
+          <div><h3>Pendidikan</h3><ul><li><b>Sekolah Tinggi Multi Media Yogyakarta</b><small>2025 · Manajemen Informasi Komunikasi</small></li></ul></div>
           <div><h3>Soft skills</h3><ul><li>Detail</li><li>Komunikasi</li><li>Kolaborasi</li><li>Adaptif</li></ul></div>
         </div>
       </div>
     </div>
   </section>
- 
+
   <section id="pengalaman" class="xp">
     <h2>Pengalaman & organisasi</h2>
     <div class="two">
@@ -234,25 +228,24 @@ footer{padding:30px 24px calc(30px + env(safe-area-inset-bottom,0px));text-align
       </ul></div>
     </div>
   </section>
- 
+
   <section id="proyek" class="pj">
     <h2>Selected work</h2>
     <div class="strips" id="strips"></div>
   </section>
- 
+
   <section id="kontak" class="toc">
     <h2>Ayo ngobrol</h2>
     <p>Punya ide atau tawaran kerja sama? Pilih jalurmu, aku senang membalas.</p>
     <div class="pills">
-      <a href="mailto:email@kamu.com">Email</a>
+      <a href="mailto:octaviantyputri16@gmail.com">Email aq</a>
       <a href="https://www.linkedin.com/in/putri-octavianty-/" target="_blank" rel="noopener">LinkedIn</a>
-      <a id="gh2" href="#" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://instagram.com/usernamekamu" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://instagram.com/ptrioxctvy" target="_blank" rel="noopener">Instagram</a>
     </div>
   </section>
 </main>
 <footer>© <span id="yr"></span> Putri Octavianty. Dibuat dengan GitHub Pages.</footer>
- 
+
 <script>
 /* ====== EDIT BAGIAN INI ====== */
 const CONFIG = {
@@ -275,12 +268,12 @@ $("yr").textContent = new Date().getFullYear();
 $("gh").href = $("gh2").href = "https://github.com/" + CONFIG.username;
 $("skills").innerHTML = CONFIG.skills.map((s,i) => '<span style="--i:'+i+'">' + esc(s) + "</span>").join("");
 $("mq").innerHTML = Array(4).fill(CONFIG.skills.map(s => "<span>" + esc(s) + "</span>").join("")).join("");
- 
+
 /* judul huruf per huruf */
 const h1 = document.querySelector(".hero h1"), txt = h1.textContent;
 h1.setAttribute("aria-label", txt);
 h1.innerHTML = [...txt].map((c,i) => '<span aria-hidden="true" style="--i:'+i+'">'+c+"</span>").join("");
- 
+
 function render(list){
   $("strips").innerHTML = list.slice(0,4).map((p,i) =>
     '<article class="strip c'+i+(i===0?' on':'')+'"><button class="tab" aria-expanded="'+(i===0)+'">'+esc(p.t)+'</button>' +
@@ -291,14 +284,14 @@ function render(list){
   }));
 }
 render(CONFIG.projects);
- 
+
 fetch("https://api.github.com/users/" + CONFIG.username + "/repos?sort=updated&per_page=30")
   .then(r => r.ok ? r.json() : Promise.reject())
   .then(l => {
     const top = l.filter(r => !r.fork).sort((a,b) => b.stargazers_count - a.stargazers_count).slice(0,4);
     if (top.length) render(top.map(r => ({t:r.name, d:r.description || "Belum ada deskripsi.", u:r.html_url})));
   }).catch(() => {});
- 
+
 /* muncul saat scroll */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.15});
 document.querySelectorAll(".hero .badge,.hero em,.hero p,.hero .btn,.hello>div>*,.cols>div,.card,.xp h2,.pj h2,.strips,.toc>*,.pills a").forEach(el => {
@@ -307,21 +300,21 @@ document.querySelectorAll(".hero .badge,.hero em,.hero p,.hero .btn,.hello>div>*
   io.observe(el);
 });
 io.observe($("skills"));
- 
+
 /* menu aktif mengikuti scroll */
 const links = [...document.querySelectorAll(".nav li a")];
 const so = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) links.forEach(a => a.classList.toggle("cur", a.getAttribute("href") === "#" + e.target.id));
 }), {rootMargin:"-45% 0px -50% 0px"});
 ["home","tentang","pengalaman","proyek","kontak"].forEach(id => so.observe($(id)));
- 
+
 /* progres scroll */
 const bar = $("bar");
 addEventListener("scroll", () => {
   const m = document.documentElement.scrollHeight - innerHeight;
   bar.style.transform = "scaleX(" + (m > 0 ? scrollY / m : 0) + ")";
 }, {passive:true});
- 
+
 /* cahaya mengikuti kursor + kartu miring */
 if (fine){
   const g = $("glow");
